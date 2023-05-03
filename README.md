@@ -39,10 +39,10 @@ Expected output:
 
     If logged in successfully, you should see the following graphical interface in your browser:
 
-<img src="https://raw.githubusercontent.com/jimmyliu1326/vtec23_integrated/main/img/rstudio.png" width="750"/>
+<img src="https://raw.githubusercontent.com/bioinformaticsdotca/IDE_2023/main/module5/img/rstudio.png" width="750"/>
 
 3. Load up `cgMLST_workflow.Rmd` by clicking [File] -> [Open File] -> [Select the .Rmd file in `module4` directory]
 
     If you have successfully opened the `.Rmd` file, you will see the following screen:
 
-<img src="https://raw.githubusercontent.com/bioinformaticsdotca/IDE_2023/main/module5/img/rmarkdown.png" width="750"/>
+<img src="https://raw.githubusercontent.com/jimmyliu1326/vtec23_integrated/main/img/rstudio.png" width="750"/>
