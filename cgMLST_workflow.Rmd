@@ -1,7 +1,7 @@
 ---
-title: "Module 5 Lab"
+title: "cgMLST R Workflow"
 author: "Jimmy Liu and Eduardo Taboada"
-date: "2023-04-03"
+date: "2023-05-03"
 output:
   html_document:
     keep_md: yes
@@ -50,6 +50,7 @@ Many aspects of this R workflow have been prebaked in the sense that the code re
 -   MLST calls must be stored in a **tab delimited** file called `cgMLST.tsv` under the `data/` folder.
 -   The first column in the MLST calls must contain the genome IDs. The column header for the genome IDs must be named `#Name`.
 -   The genome IDs in the `#Name` column should match the IDs in the metadata file. However, the order of the IDs in which they are recorded in the MLST profiles do not have to be identical to that of the metadata.
+-   Unassigned/missing alleles must be encoded as `0` in MLST profiles
 
 #### Metadata
 
@@ -430,7 +431,7 @@ ggsave("cgMLST_tree.pdf", height = 8, width = 8)
 
 ## Comparing SNV and cgMLST Analysis
 
-Here, we will compare the topologies of the cgMLST distance tree to the SNV phylogeny produced from the earlier module. We will use the `read.tree()` function from the `ggtree` package to load the tree into the R environment, and use `plot_tree()` function as above to visualize the tree.
+Here, we will compare the topologies of the cgMLST distance tree to the SNV phylogeny produced from the earlier module. We will use the `read.tree()` function from the `ggtree` package to load the SNV tree in newick format into the R environment, and use `plot_tree()` function as above to visualize the tree.
 
 Both trees are saved as PDF format. Using any PDF viewer, open up the two files side by side, and look for similarities and differences in tree topology and branch lengths.
 
