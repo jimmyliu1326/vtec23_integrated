@@ -105,13 +105,13 @@ cran_pkgs <- c("tidyverse", "data.table", "ggnewscale", "BiocManager",
 bioc_pkgs <- c("ComplexHeatmap", "YuLab-SMU/treedataverse")
 # check CRAN pkgs
 for (i in cran_pkgs) { 
-  if ( nchar(find.package(i, quiet = T)) == 0 ) {
+  if ( length(find.package(i, quiet = T)) == 0 ) {
     install.packages(i)
   }
 }
 # check Bioconductor pkgs
 for (i in bioc_pkgs) { 
-  if ( nchar(find.package(gsub(".*/", "", i), quiet = T)) == 0 ) {
+  if ( length(find.package(gsub(".*/", "", i), quiet = T)) == 0 ) {
     BiocManager::install(i)
   }
 }
