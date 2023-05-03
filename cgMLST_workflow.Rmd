@@ -27,7 +27,7 @@ chewBBACA.py AlleleCall -i /path/to/my_genomes/ -g /path/to/cgMLST_scheme/ -o /p
 
 ## Learning Objectives
 
--   Understanding the significance of metrics used for MLST-based quality control
+-   Understanding the significance of the metrics used for MLST-based quality control
 -   Explaining the difference between core, accessory and pan-genome loci and their use in MLST analysis
 -   Building dendrograms from MLST data
 -   Familiarisation with the ggtree R library for tree visualization
@@ -258,6 +258,8 @@ A != B:   `[ 0 , 1 , 0 , 1 , 1 , 0 , 0 , 0 , 0 ]`
 
 Hamming distance = `sum( A != B )` = 3
 
+In the context of two cgMLST profiles, hamming distance can be calculated based on the number of allele differences across all loci. Hamming distances will be computed in an all vs all fashion to generate a pairwise distance matrix that will serve as the input for distance-based tree-building algorithms, such as UPGMA and Neighbour-joining.
+
 ```{r calculate hamming distance}
 dist_mat <- cgmlst_final %>% 
   column_to_rownames("#Name") %>% 
@@ -268,7 +270,7 @@ dist_mat <- cgmlst_final %>%
 dim(dist_mat)
 ```
 
-In the context of two cgMLST profiles, hamming distance can be calculated based on the number of allele differences across all loci. Hamming distances will be computed in an all vs all fashion to generate a pairwise distance matrix that will serve as the input for distance-based tree-building algorithms such as UPGMA and Neighbour-joining. We will visualize the clustering patterns in the distance matrix using the ComplexHeatmap package. We will also overlay serovar information to examine inter- and intra-serovar distances.
+Let's now visualize the clustering patterns in the distance matrix in the form of a heatmap using the `ComplexHeatmap` package. We will also overlay serovar information to examine inter- and intra-serovar distances.
 
 ```{r distance matrix viz}
 # create column annotations for heatmap
@@ -535,5 +537,5 @@ plot_tree(
 )
 
 # save plot as pdf
-#ggsave("integrated_tree.pdf", height = 10, width = 20)
+ggsave("integrated_tree.pdf", height = 10, width = 20)
 ```
