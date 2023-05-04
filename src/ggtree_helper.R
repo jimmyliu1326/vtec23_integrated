@@ -100,7 +100,9 @@ plot_tree <- function(
           legend.text = element_text(size = legend.size+6)) +
     labs(color = "") +
     guides(color = guide_legend(override.aes = list(size = legend.size),
-                                nrow = legend.ncat.per.col)) +
+                                nrow = if_else(legend.ncat.per.col > n_colors,
+                                               n_colors,
+                                               legend.ncat.per.col))) +
     geom_treescale(y = 0, x = 500) +
     ggtree::xlim(NA, plot.xlim)
   
@@ -116,6 +118,8 @@ plot_tree <- function(
     
   } else {
     
+    # determine whether to randomly sample 
+    # columns in genome annotations
     if (annot.random.sample) { 
       set.seed(NULL)
       annot.random.seed <- sample(1:10000, 1)
@@ -125,6 +129,8 @@ plot_tree <- function(
       set.seed(annot.random.seed)
     }
     
+    # parse the input annotation tables in long format
+    # and create a list of annot type specific dfs
     annot_l <- imap(annotations_var, function(x,y) {
       
       local_annotations <- annotations %>% 
@@ -133,19 +139,35 @@ plot_tree <- function(
       # randomly sample columns
       sample_size <- if_else(clusters.show, annot.ncol[y+1], annot.ncol[y])
       
-      local_annotations %>% 
+      # filter by feature type
+      local_annotations <- local_annotations %>% 
         filter(feature %in% sample(unique(local_annotations$feature), 
                                    if_else(sample_size > length(unique(local_annotations$feature)),
                                            length(unique(local_annotations$feature)),
-                                           sample_size))) %>% 
-        mutate(value = if_else(value == 0, "Absent", "Present"))
+                                           sample_size)))
       
+      # check if feature values only contain 0 or 1
+      # if true convert binary variables to Present and Absent
+      if ( all(local_annotations$value %in% c(0,1)) ) {
+        local_annotations %>% 
+          mutate(value = if_else(value == 0, "Absent", "Present"))
+      } else {
+        return(local_annotations)
+      }
     })
     
     if (clusters.show) {
       annot_l <- append(annot_l, list(clusters_long), after = 0)
       names(annot_l)[1] <- "clustering"
     }
+    
+    # determine annot class
+    # based on whether feature values contain Present/Absent
+    annot_class <- map_chr(annot_l, 
+                           ~if_else(all(.$value %in% c("Absent", "Present")),
+                                    "binary",
+                                    "categorical")
+    )
     
   }
   
@@ -195,18 +217,42 @@ plot_tree <- function(
         
       } else {
         
+        # determine appropriate color scale
+        if ( annot_class[i] == "binary") {
+          
+          # annotation legend params
+          annot_legend_nrow <- 1
+          annot_legend_title <- NULL
+          
+          fill_scale <- scale_fill_manual(values = c("grey", "#f76c6a"))
+          
+          
+        } else {
+          
+          # annotation legend params
+          annot_legend_nrow <- if_else(legend.ncat.per.col > length(unique(annot_l[[i]]$value)),
+                                       length(unique(annot_l[[i]]$value)),
+                                       legend.ncat.per.col)
+                                       
+          annot_legend_title <- annot.title
+          
+          fill_scale <- scale_fill_manual(values = distinctColorPalette(length(unique(annot_l[[i]]$value))))
+          
+        }
+        
         p <- p +
-          labs(fill = "") +
-          scale_fill_manual(
-            values = c("grey", "#f76c6a")
-          ) +
+          labs(fill = annot_legend_title) +
+          fill_scale +
+          #legend_theme +
+          theme(legend.title=element_text(size=legend.size+10)) +
           guides(fill = guide_legend(override.aes = list(size = legend.size),
-                                      nrow = 1))
+                                      nrow = annot_legend_nrow))
         
         # whether to hide color legend
         if ( legend.hide ) {
           p <- p + guides(fill = 'none')
         }
+        
       }
     }
   }
