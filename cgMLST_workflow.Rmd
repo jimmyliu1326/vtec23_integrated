@@ -39,7 +39,7 @@ The *E. coli* dataset has been uploaded to Google Sheets:
 
 # Technical Notes
 
-Many aspects of this R workflow have been prebaked in the sense that the code relies on specific input data formats and file paths. Thus, it can be rather difficult to rerun the code on a different dataset or in a different compute environment. It would be a shame if the utility of the R code presented here cannnot be extended beyond the context of this tutorial, and hence we have prepared a technical guide below on how to reuse the Rmarkdown outside of the prebaked tutorial.
+Many aspects of this R workflow have been prebaked in the sense that the code relies on specific input data formats and file paths. Thus, it can be rather difficult to rerun the code on a different dataset or in a different compute environment. It would be a shame if the utility of the R code presented here cannot be extended beyond the context of this tutorial, and hence we have prepared a technical guide below on how to reuse the Rmarkdown outside of the prebaked tutorial.
 
 #### cgMLST Profiles
 
