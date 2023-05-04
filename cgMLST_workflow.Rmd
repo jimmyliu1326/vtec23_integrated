@@ -499,13 +499,13 @@ annotations <- map_dfr(annotation_types, function(x) {
 annotations
 ```
 
-```{r integrated tree, fig.height=10, message = F}
+```{r integrated tree, fig.height=10, message = F, warning = F}
 plot_tree(
   tree = rooted_tree,
   clusters = clusters,
   clusters.show = T, # whether to show clustering data
   annotations = annotations,
-  annotations_var = c("Drug Classes", "AMR", "Plasmids"),
+  annotations_var = c("Drug Classes", "VFs", "Plasmids"),
   color_by = "serovar", # which metadata variable to color tree tips by?
   color.tiplab = F, # whether to color tip labels
   tip.size = 5, # size of tree tip point
