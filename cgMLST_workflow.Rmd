@@ -98,7 +98,7 @@ Let's begin by loading all R packages and helper scripts required to run all the
 cran_pkgs <- c("tidyverse", "data.table", "ggnewscale", "BiocManager",
                "circlize", "phangorn", "randomcoloR", "RColorBrewer",
                "phytools", "knitr")
-bioc_pkgs <- c("ComplexHeatmap", "YuLab-SMU/treedataverse")
+bioc_pkgs <- c("remotes", "ComplexHeatmap", "YuLab-SMU/treedataverse")
 # check CRAN pkgs
 for (i in cran_pkgs) { 
   if ( length(find.package(i, quiet = T)) == 0 ) {
