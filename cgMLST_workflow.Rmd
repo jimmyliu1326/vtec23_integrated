@@ -231,7 +231,7 @@ cgmlst_final <- cgmlst_lc %>%
   filter(!(`#Name` %in% lqual_genomes)) %>% 
   select(1, all_of(core_loci))
 # remove low qual genomes from metadata
-metadata <- metadata %>% filter(!(ID %in% lqual_genomes))
+metadata_final <- metadata %>% filter(!(ID %in% lqual_genomes))
 # write to file
 write.table(cgmlst_final, "cgmlst_final.tsv",
             quote = F, row.names = F, sep = "\t")
@@ -273,8 +273,8 @@ Let's now visualize the clustering patterns in the distance matrix in the form o
 ```{r distance matrix viz}
 # create column annotations for heatmap
 # to display serovar information
-heatmap_annot <- metadata$serovar
-names(heatmap_annot) <- metadata$ID
+heatmap_annot <- metadata_final$serovar
+names(heatmap_annot) <- metadata_final$ID
 heatmap_annot <- heatmap_annot[order(factor(names(heatmap_annot),
                                             levels = rownames(dist_mat)))]
 # create heatmap
@@ -334,7 +334,7 @@ outgroup_id <- as_tibble(cg_tree)$node[which(as_tibble(cg_tree)$label == outgrou
 rooted_tree <- phytools::reroot(cg_tree, node.number = outgroup_id)
 
 # root at an internal node
-rooted_tree <- phytools::reroot(cg_tree, node.number = 76)
+rooted_tree <- phytools::reroot(cg_tree, node.number = 74)
 
 # export tree in newick format
 write.tree(rooted_tree, file = "cgMLST_tree.nwk")
@@ -406,6 +406,7 @@ Let's now add the clustering information to the previous tree and examine whethe
 ```{r add cluster info, fig.height = 6, message = F}
 plot_tree(
   tree = rooted_tree,
+  metadata = metadata_final,
   clusters = clusters,
   color_by = "serovar", # which metadata variable to color tree tips by?
   color.tiplab = F, # whether to color tip labels
@@ -415,7 +416,7 @@ plot_tree(
   legend.size = 5, # legend text size
   legend.ncat.per.col = 8, # number of categories to show per column in legend
   legend.hide = F, # whether to hide colour legend
-  plot.xlim = 2800, # plot area width
+  plot.xlim = 2900, # plot area width
   label_vars = c("ID"), # metadata vars only
   label.offset = 25, # distance between labels and tree tips
   label.size = 4, # tree tip label text size
@@ -444,6 +445,7 @@ snv_tree <- read.tree(snv_tree_path)
 # plot snv tree
 plot_tree(
   tree = snv_tree,
+  metadata = metadata,
   clusters = clusters,
   color_by = "serovar", # which metadata variable to color tree tips by?
   color.tiplab = F, # whether to color tip labels
@@ -471,7 +473,12 @@ ggsave("SNV_tree.pdf", height = 8, width = 8)
 
 The `plot_tree()` function is a very powerful function that goes beyond analyzing genomic clusters and contextual data. It is also able to integrate genome annotation information to tree visualizations to identify genomic features such as VFs or ARGs that are localized to specific clusters. The genome annotation information can be provided to `plot_tree()` using the `annotations` parameter. You can also choose which feature type(s) to display using the `annotations_var` parameter.
 
-The annotation information must be formatted as a data frame that consists of four columns: \* `ID`: genome IDs, \* `feature`: name of the genomic feature such as gene name \* `value`: 0 or 1 indicating absence or presence of feature \* `type`: the type of genomic feature such as AMR, Plasmids, VFs
+The annotation information must be formatted as a data frame that consists of four columns:
+
+-   `ID`: genome IDs
+-   `feature`: name of the genomic feature such as gene name
+-   `value`: 0 or 1 indicating absence or presence of feature
+-   `type`: the type of genomic feature such as AMR, Plasmids, VFs
 
 The code chunk below will search for the presence/absence matrices (tab delimited files) stored under `data/annotations/` and parse the file content to generate a genome annotation table in the format described above.
 
@@ -502,6 +509,7 @@ annotations
 ```{r integrated tree, fig.height=10, message = F, warning = F}
 plot_tree(
   tree = rooted_tree,
+  metadata = metadata_final,
   clusters = clusters,
   clusters.show = T, # whether to show clustering data
   annotations = annotations,
