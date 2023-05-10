@@ -1,40 +1,40 @@
-ID	aminoglycosides	trimethoprim	fluoroquinolones	macrolides	monobactams	penems	polymyxins	sulfonamides	fosfomycin	cephalosporins	cephamycins	penams
-ED766							PmrF, bacA, ugd, eptA		GlpT with mutations	EC-13, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED729	aadA, APH(6)-Id, APH(3'')-Ib	dfrA1		mphB			eptA, bacA, PmrF, ugd	sul1, sul2	GlpT with mutations	EC-13, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED728							PmrF, eptA, bacA, ugd		GlpT with mutations	EC-13, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED699							eptA, bacA, PmrF, ugd		GlpT with mutations	EC-15, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED680							PmrF, bacA, ugd, eptA		GlpT with mutations	EC-15, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED679							PmrF, eptA, bacA, ugd		GlpT with mutations	EC-15, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED676							bacA, eptA, PmrF, ugd		GlpT with mutations	EC-14, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED672	aadA, APH(6)-Id	dfrA1	gyrA with mutations	mphB	TEM-1	TEM-1	bacA, PmrF, eptA	sul1, sul2	GlpT with mutations	EC-14, TEM-1, PBP3 with mutations	PBP3 with mutations	TEM-1, PBP3 with mutations
-ED669							bacA, PmrF, ugd		GlpT with mutations	EC-13, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED668							PmrF, bacA, eptA, ugd		GlpT with mutations	EC-15, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED666							PmrF, bacA, eptA, ugd		GlpT with mutations	EC-15, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED664	aadA						bacA, PmrF, eptA	sul1	GlpT with mutations	EC-13, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED657							bacA, PmrF, ugd, eptA		GlpT with mutations	PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED654							ugd, PmrF, eptA, bacA		GlpT with mutations	EC-14, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED653							PmrF, bacA, eptA, ugd		GlpT with mutations	EC-15, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED647							eptA, bacA, ugd, PmrF		GlpT with mutations	EC-15, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED644							PmrF, bacA, eptA, ugd		GlpT with mutations	EC-15, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED636							eptA, PmrF, bacA, ugd		GlpT with mutations	EC-15, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED608	APH(6)-Id, APH(3')-Ia				TEM-1	TEM-1	bacA, PmrF, eptA	sul2	GlpT with mutations	EC-14, TEM-1, PBP3 with mutations	PBP3 with mutations	TEM-1, PBP3 with mutations
-ED604							bacA, eptA, PmrF, ugd		GlpT with mutations	EC-15, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED603							PmrF, ugd, bacA, eptA		GlpT with mutations	EC-13, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED449							PmrF, eptA, bacA, ugd		GlpT with mutations	EC-15, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED423							eptA, bacA, PmrF, ugd		GlpT with mutations	EC-13, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED415	APH(6)-Id, APH(3')-Ia				TEM-1	TEM-1	bacA, eptA, ugd, PmrF	sul2	GlpT with mutations	EC-15, TEM-1, PBP3 with mutations	PBP3 with mutations	TEM-1, PBP3 with mutations
-ED414							bacA, eptA, ugd, PmrF		GlpT with mutations	EC-15, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED413							bacA, eptA, ugd, PmrF		GlpT with mutations	EC-15, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED411							eptA, PmrF, ugd, bacA		GlpT with mutations	EC-13, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED392							eptA, bacA, PmrF, ugd		GlpT with mutations	EC-13, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED287							PmrF, eptA, ugd, bacA		GlpT with mutations	EC-13, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED195							eptA, bacA, PmrF, ugd		GlpT with mutations	EC-13, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED180							eptA, bacA, PmrF, ugd		GlpT with mutations	EC-13, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED178	aadA						bacA, PmrF, eptA	sul1	GlpT with mutations	EC-13, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED142	aadA	dfrA1					bacA, PmrF, eptA	sul1	GlpT with mutations	EC-14, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED082	aadA						bacA, PmrF, eptA	sul1	GlpT with mutations	EC-14, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED075	APH(6)-Id, APH(3'')-Ib				TEM-1	TEM-1	eptA, bacA, PmrF, ugd		GlpT with mutations	EC-14, TEM-1, PBP3 with mutations	PBP3 with mutations	TEM-1, PBP3 with mutations
-ED073	APH(6)-Id, aadA	dfrA14			TEM-1	TEM-1	bacA, PmrF, eptA	sul1	GlpT with mutations	EC-13, TEM-1, PBP3 with mutations	PBP3 with mutations	TEM-1, PBP3 with mutations
-ED040							PmrF, eptA, ugd, bacA		GlpT with mutations	EC-15, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
-ED017	APH(3'')-Ib, APH(6)-Id, AAC(3)-IIe, aadA	dfrA1		mphB	TEM-1	TEM-1	PmrF, ugd, bacA, eptA	sul2, sul1	GlpT with mutations	EC-13, TEM-1, PBP3 with mutations	PBP3 with mutations	TEM-1, PBP3 with mutations
-ED010							bacA, eptA, ugd, PmrF		GlpT with mutations	EC-15, PBP3 with mutations	PBP3 with mutations	PBP3 with mutations
+ID	penems	sulfonamides
+ED766	none	none
+ED729	none	sul1, sul2
+ED728	none	none
+ED699	none	none
+ED680	none	none
+ED679	none	none
+ED676	none	none
+ED672	TEM-1	sul1, sul2
+ED669	none	none
+ED668	none	none
+ED666	none	none
+ED664	TEM-1	sul1
+ED657	none	none
+ED654	none	none
+ED653	none	none
+ED647	none	none
+ED644	none	none
+ED636	none	none
+ED608	TEM-1	sul2
+ED604	none	none
+ED603	none	none
+ED449	none	none
+ED423	none	none
+ED415	TEM-1	sul2
+ED414	none	none
+ED413	none	none
+ED411	none	none
+ED392	none	none
+ED287	none	none
+ED195	none	none
+ED180	none	none
+ED178	TEM-1	sul1
+ED142	TEM-1	sul1
+ED082	TEM-1	sul1
+ED075	TEM-1	none
+ED073	TEM-1	sul1
+ED040	none	none
+ED017	TEM-1	sul1, sul2
+ED010	none	none
