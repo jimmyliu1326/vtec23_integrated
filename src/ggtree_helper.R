@@ -1,6 +1,7 @@
 # general tree plotting func
 plot_tree <- function(
     tree = NULL,
+    metadata = NULL,
     clusters = NULL,
     clusters.show = T,
     annotations = NULL,
